@@ -515,7 +515,8 @@ async function fetchPlanetsData() {
     if (earthData) {
       updatePlanetDetails(earthData);
     }
-    initPlanetCards();
+
+    initPlanetCards(); //  ^  الي كنت ناسيها
   } catch (error) {
     console.error("حدث خطأ أثناء جلب بيانات الكواكب:", error);
   }
