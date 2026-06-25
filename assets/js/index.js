@@ -515,6 +515,7 @@ async function fetchPlanetsData() {
     if (earthData) {
       updatePlanetDetails(earthData);
     }
+    initPlanetCards();
   } catch (error) {
     console.error("حدث خطأ أثناء جلب بيانات الكواكب:", error);
   }
@@ -660,4 +661,6 @@ function generateDynamicFacts(planet) {
   planetFactsList.innerHTML = factsHTML;
 }
 
-document.addEventListener("DOMContentLoaded", fetchPlanetsData);
+document.addEventListener("DOMContentLoaded", async () => {
+  await fetchPlanetsData();
+});
